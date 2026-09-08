@@ -1,5 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Header from './components/common/Header';
+import Footer from './components/common/Footer'; // <-- 1. Footer import karo
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,9 +22,21 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      {/* 2. min-h-screen lagao taaki body poori screen ki height le */}
+      <body className="min-h-screen flex flex-col">
+
+        <Header />
+
+        {/* 3. flex-grow lagane se yeh saari khaali space cover kar lega aur footer neeche chala jayega */}
+        <main className="flex-grow">
+          {children}
+        </main>
+        
+        <Footer /> {/* 4. Footer sabse end mein */}
+
+       </body>
     </html>
   );
 }
