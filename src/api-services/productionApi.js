@@ -10,4 +10,14 @@ async function getProducts() {
   }
 }
 
-export { getProducts };
+async function getProductById(id) {
+  try {
+    const response = await axios.get(`https://dummyjson.com/products/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error("Unable to load product:", error.message);
+    return null;
+  }
+}
+
+export { getProducts, getProductById };
