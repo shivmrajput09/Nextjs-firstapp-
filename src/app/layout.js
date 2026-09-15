@@ -37,6 +37,6 @@ export default function RootLayout({ children }) {
         <Footer /> {/* 4. Footer sabse end mein */}
 
        </body>
-    </html>
+    </html> 
   );
 }
