@@ -12,7 +12,7 @@ function Loading() {
 
       {/* Loading Text */}
       <h2 className="text-2xl font-bold text-gray-900 mb-2 tracking-tight">
-        Loading...
+        Loading....
       </h2>
       
       {/* Subtext */}
